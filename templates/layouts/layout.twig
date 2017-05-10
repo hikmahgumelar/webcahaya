@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Cahaya Communication</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="cc/css/materialize.min.css"/>
     <script src='cc/js/materialize.min.js'></script>
   </head>
   <body>
 <nav>
   <div class="nav-wrapper">
-     <a href="#" class="brand-logo left"><img class="responsive-img" id="logo" src="">    Cahaya Communication</a>
-     <ul id="nav-mobile" class="right hide-on-med-and-down">
+     <a href="#" class="brand-logo left"><img class="responsive-img" id="logo" src=""></a>
+     <ul id="nav-mobile" class="left hide-on-med-and-down">
        {% for link in navLinks %}
           {% set linkClass = '' %}
           {% if link.key == section %}
@@ -20,9 +21,13 @@
             <a href="{{ link.href }}">{{ link.label }}</a>
           </li>
         {% endfor %}
-        {% if user is defined %}
+      </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><div class="chip"><img src="cc/images/wa.png" alt="Contact Person"><b>0812974888800</b></div>
+          <div class="chip"><img src="cc/images/bbm.png" alt="Contact Person"><b>D0133D0A</b></div></li>
+          {% if user is defined %}
           {% if user.canAccessKeystone %}
-            <li><a href="/keystone">Masuk ke webadmin</a></li>
+            <li><a href="/keystone">Kontrol Panel</a></li>
           {% endif %}
           <li><a href="/keystone/signout">Keluar</a></li>
         {% else %}
@@ -36,6 +41,7 @@
 <div class="row">
 
       <div class="col s3">
+
         <!-- Grey navigation panel -->
         <div class="collection">
           <a href="#!" class="collection-item">Product</a>
@@ -43,8 +49,23 @@
           <a href="#!" class="collection-item">CCTV</a>
           <a href="#!" class="collection-item">Computing</a>
         </div>
-
+        <div class="card  darken-1">
+          <div class="card-content black-text">
+            <span class="card-title">Hubungi Kami</span>
+            <p>Jangan sungkan untuk menghubungi kami.
+            kami siap membantu anda memenuhi kebutuhan
+            perusahaan anda dalam hal teknologi komunikasi</p>
+            <div class="chip">
+            <img src="cc/images/wa.png" alt="Contact Person">
+            <b>0812974888800</b>
+            </div>
+            <div class="chip">
+            <img src="cc/images/bbm.png" alt="Contact Person">
+            <b>D0133D0A</b>
+            </div>
+          </div>
       </div>
+    </div>
       <div class="col s9">
         <!-- Teal page content  -->
         {% block content %}{% endblock %}
@@ -55,13 +76,11 @@
             <div class="card blue-grey darken-1">
               <div class="card-content white-text">
                 <span class="card-title">Cahaya Communication</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
+                <p>SELAIN PABX KAMI JUGA MENYEDIAKAN CCTV
+                  DENGAN MERK DAHUA, PANASONIC DAN HIKVISION
+                  HUBUNGI KAMI MENGENAI HARGA</p>
               </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-              </div>
+
             </div>
           </div>
 
@@ -72,13 +91,11 @@
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">Cahaya Communication</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <p>KAMI MENJUAL BERBAGAI PANASONIC PABX
+            DAN JUGA BILLING SYSTEM UNTUK SEMUA PABX
+            HUBUNGI KAMI UNTUK HARGA.</p>
         </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
+
       </div>
     </div>
   </div>
@@ -90,16 +107,16 @@
 
       <div class="col s4">
         <!-- Promo Content 1 goes here -->
-        <h1>Promo 1</h1>
+
       </div>
       <div class="col s4">
         <!-- Promo Content 2 goes here -->
-        <h1>Promo 2</h1>
+
 
       </div>
       <div class="col s4">
         <!-- Promo Content 3 goes here -->
-        <h1>Promo 3</h1>
+
 
       </div>
 
@@ -110,17 +127,20 @@
     <footer class="page-footer">
               <div class="container">
                 <div class="row">
-                  <div class="col l6 s12">
+                  <div class="col s12 m5">
                     <h5 class="white-text">Cahaya Communication</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    <b><p class="grey-text text-lighten-4">Alamat
+                      E-mail: sunarto.sn@gmail.com
+                      Phone Simpati: +62 0812974888800
+                      jl raya duri kosambi no 40 cengkareng jakarta barat</p></b>
                   </div>
-                  <div class="col l4 offset-l2 s12">
+                  <div class="col s12 m5">
                     <h5 class="white-text">Links</h5>
                     <ul>
-                      <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Product</a></li>
+                      <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+                      <li><a class="grey-text text-lighten-3" href="/about">About</a></li>
+                      <li><a class="grey-text text-lighten-3" href="/contact">Contact</a></li>
+                      <li><a class="grey-text text-lighten-3" href="/product">Product</a></li>
                     </ul>
                   </div>
                 </div>
