@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Testing Pertama</title>
+    <link rel="stylesheet" href="cc/css/materialize.min.css"/>
+    <script src='cc/js/materialize.min.js'></script>
+  </head>
+  <body>
+<nav>
+  <div class="nav-wrapper">
+     <a href="#" class="brand-logo left"><img class="responsive-img" id="logo" src="">    Cahaya Communication</a>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+       {% for link in navLinks %}
+          {% set linkClass = '' %}
+          {% if link.key == section %}
+            {% set linkClass = ' class="active"' %}
+          {% endif %}
+          <li{{ linkClass | striptags }}>
+            <a href="{{ link.href }}">{{ link.label }}</a>
+          </li>
+        {% endfor %}
+        {% if user is defined %}
+          {% if user.canAccessKeystone %}
+            <li><a href="/keystone">Masuk ke webadmin</a></li>
+          {% endif %}
+          <li><a href="/keystone/signout">Keluar</a></li>
+        {% else %}
+          <li><a href="/keystone/signin">Masuk</a></li>
+        {% endif %}
+     </ul>
+   </div>
+</nav>
+
+
+<div class="row">
+
+      <div class="col s3">
+        <!-- Grey navigation panel -->
+        <div class="collection">
+          <a href="#!" class="collection-item">Product</a>
+          <a href="#!" class="collection-item">Pabx</a>
+          <a href="#!" class="collection-item">CCTV</a>
+          <a href="#!" class="collection-item">Computing</a>
+        </div>
+
+      </div>
+      <div class="col s9">
+
+        <!-- Teal page content  -->
+        <div class="row">
+            <div class="col s12 m6">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Cahaya Communication</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                  <a href="#">This is a link</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+    <!--Konten -->
+
+      <!--end konten -->
+    <footer class="page-footer">
+              <div class="container">
+                <div class="row">
+                  <div class="col l6 s12">
+                    <h5 class="white-text">Cahaya Communication</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                  </div>
+                  <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                      <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Product</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-copyright">
+                <div class="container">
+                © 2017 Copyright Cahaya Communication
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+              </div>
+            </footer>
+  </body>
+</html>
