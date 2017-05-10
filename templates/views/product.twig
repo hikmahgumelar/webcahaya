@@ -1,0 +1,24 @@
+{% extends "../layouts/layout.twig" %}
+
+{% block content %}
+<div class="row">
+	{% if not products.results %}
+		<h2>Invalid Produk.</h2>
+	{% else %}
+		<header>
+{% for produk in products.results %}
+<h5>Nama Produk		:</h5><h5>{{produk.name}}</h5><p>
+
+</p>
+<p><h5>Harga Produk	:</h5><h5>{{produk.harga}}</h5><p>
+
+</p>
+<p><h5>Nama Deskripsi:</h5><h5>{{produk.deskripsi}}</h5><p>
+	
+</p>
+<p><h5><a href="/products/{{produk.deskripsi}}">{{produk.deskripsi}}</a></h5>
+{% endfor %}
+	{% endif %}
+</div>
+</div>
+{% endblock %}

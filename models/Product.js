@@ -27,5 +27,6 @@ Product.add({
 /**
  * Registration
  */
+Product.defaultSort = '-createdAt';
 Product.defaultColumns = 'name, harga, deskripsi';
 Product.register();
